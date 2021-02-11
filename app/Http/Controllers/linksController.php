@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Links;
 use Illuminate\Http\Request;
 
-class LinksController extends Controller
+class linksController extends Controller
 {
     public function __construct()
     {

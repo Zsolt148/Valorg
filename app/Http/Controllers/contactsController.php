@@ -2,41 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\contactsMail;
 use App\Models\Contacts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
-class ContactsController extends Controller
+class contactsController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except('submit');
-    }
-
-    public function index() {
-        $messages = Contacts::all();
-        return view('contacts.index', compact('messages'));
-    }
-
-    public function destroy($id) {
-
-        Contacts::findOrFail($id)->delete();
-
-        return redirect()->route('admin.contacts.index')->with('success', 'Sikeresen törölve');
-    }
 
     public function submit(Request $request) {
+
         $data = $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:contacts',
+            'email' => 'required|email',
             'body' => 'required',
         ]);
 
-        Contacts::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'body' => $data['body'],
-        ]);
+        dispatch(function () use ($data) {
+            Mail::to('valorg2019@gmail.com')->queue(new contactsMail($data));
+        });
 
         return response()->json(["error" => false, "msg" => "Elküldve"]);
     }
+
 }

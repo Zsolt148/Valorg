@@ -19,8 +19,17 @@
                         <div class="col-md-12">
                             <div class="heading-block border-bottom-0 mb-0">
                                 <h3 class="nott ls0 mb-3">Hívj minket a +36-76/484-610-es telefonszámon</h3>
-                                <p>Telefonos egyeztetés után gyere el személyesen az irodánkba</p>
-                                <p>6000 Kecskemét, Erkel Ferenc utca 1.</p>
+                            </div>
+                            <div class="text-larger mb-3">
+                                <a href="https://goo.gl/maps/KETMYZY3GCQMiqSa6" target="_blank">6000 Kecskemét, Erkel utca 1.</a>
+                            </div>
+                            <div class="text-larger">
+                                Munkatársaink: <br>
+
+                                Pál Andrea  +36703895527<br>
+                                Válik Dominika +36707763552<br>
+                                Kondász Sára +3676484610 <br><br>
+                                E-mail: <a href="mailto:valorg2019@gmail.com">valorg2019@gmail.com</a>
                             </div>
                         </div>
                     </div>
@@ -31,8 +40,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="heading-block border-bottom-0 mb-0">
-                                <h3 class="nott ls0">Írj nekünk üzenetet</h3>
-                                <span class="text-smaller mb-5">Egy email címről egy darab üzenet küldhető!</span>
+                                <h3 class="nott ls0 mb-5">Írj nekünk üzenetet</h3>
                                 <div class="style-msg successmsg" style="display: none" id="success">
                                     <div class="sb-msg"><i class="icon-thumbs-up"></i><strong id="successMsg"></strong></div>
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -41,17 +49,17 @@
                                     @csrf
                                     <div class="col-12 form-group mb-3">
                                         <label for="template-contactform-name">Név:*</label>
-                                        <input type="text" id="template-contactform-name" name="name" class="form-control input-sm required" value="">
+                                        <input type="text" id="name" name="name" class="form-control input-sm required" value="">
                                         <span class="text-sm text-danger" style="display: none" id="nameError">A név mező kötelező</span>
                                     </div>
                                     <div class="col-12 form-group mb-3">
                                         <label for="template-contactform-email">Email cím:*</label>
-                                        <input type="email" id="template-contactform-email" name="email" class="form-control input-sm required" value="">
+                                        <input type="email" id="email" name="email" class="form-control input-sm required" value="">
                                         <span class="text-sm text-danger" style="display: none" id="emailError">Az email megadása kötelező és valós emailnek kell lennie</span>
                                     </div>
                                     <div class="col-12 form-group mb-4">
                                         <label for="template-contactform-website">Üzenet:*</label>
-                                        <textarea name="body" class="form-control input-sm required"></textarea>
+                                        <textarea name="body" id="body" class="form-control input-sm required"></textarea>
                                         <span class="text-sm text-danger" style="display: none" id="bodyError">A szöveg mező kötelező</span>
                                     </div>
                                     <div class="col-12 form-group mb-0">
@@ -88,6 +96,9 @@
                 success: function (resp) {
                     $('#successMsg').html('Sikeresen elküldve. Köszönjük üzenetét!');
                     $('#success').removeAttr('style');
+                    $('#name').val('');
+                    $('#email').val('');
+                    $('#body').val('');
                 },
                 error: function(resp) {
                     console.log(resp.responseJSON.errors);

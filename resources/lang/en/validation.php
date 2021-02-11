@@ -82,7 +82,7 @@ return [
         'string' => 'The :attribute may not be greater than :max characters.',
         'array' => 'The :attribute may not have more than :max items.',
     ],
-    'mimes' => 'The :attribute must be a file of type: :values.',
+    'mimes' => 'A :attribute csak: :values kiterjesztésű lehet.',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
     'min' => [
         'numeric' => 'A(z) :attribute legalább :min karakternek kell lennie.',
@@ -165,6 +165,8 @@ return [
         'slug' => 'URL cím',
         'body' => 'Szöveg',
         'url' => 'URL cím',
+        'tax_id' => 'Adóazonosító',
+        'file' => 'Fájl',
     ],
 
 ];

@@ -20,10 +20,6 @@
     <link rel="stylesheet" href="demos/seo/seo.css" type="text/css" />
     <!-- / -->
 
-    <!-- Document Title
-    ============================================= -->
-    <title>SEO Demo | Canvas</title>
-
 </head>
 
 <body class="stretched">
@@ -78,8 +74,8 @@
                     <!-- Logo
                     ============================================= -->
                     <div id="logo">
-                        <a href="/" class="standard-logo font-weight-bold">Valorg kft.</a>
-                        <a href="/" class="retina-logo font-weight-bold">Valorg kft.</a>
+                        <a href="/" class="standard-logo font-weight-bold">Valorg</a>
+                        <a href="/" class="retina-logo font-weight-bold">Valorg</a>
                     </div><!-- #logo end -->
 
                     <div id="primary-menu-trigger">

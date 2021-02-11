@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::post('setCookie', [App\Http\Controllers\HomeController::class, 'cookie'])->name('set.cookie');
 
-Route::post('contacts', [App\Http\Controllers\ContactsController::class, 'submit'])->name('send.email');
+Route::post('submit', [App\Http\Controllers\contactsController::class, 'submit'])->name('send.email');
 
 Route::get('/about-us', function() {
     return view('about-us');
@@ -36,6 +36,7 @@ Route::get('/services', function() {
 });
 
 Route::get('news', [App\Http\Controllers\newsController::class, 'index_guest'])->name('news.index');
+Route::get('forms', [App\Http\Controllers\formsController::class, 'index_guest'])->name('forms.index');
 Route::get('news/{news:slug}', [App\Http\Controllers\newsController::class, 'show'])->name('news.show');
 
 Route::get('/file/{name}/download', [\App\Http\Controllers\fileController::class, 'download'])->name('file.download');
@@ -43,9 +44,10 @@ Route::get('/file/{name}/download', [\App\Http\Controllers\fileController::class
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     //Route::get('index', [\App\Http\Controllers\adminController::class, 'index'])->name('index');
     Route::resource('news', \App\Http\Controllers\newsController::class)->except('index_guest', 'show');
+    Route::resource('forms', \App\Http\Controllers\formsController::class);
     Route::resource('files', \App\Http\Controllers\fileController::class)->except('download');
-    Route::resource('contacts', \App\Http\Controllers\ContactsController::class)->except('submit');
-    Route::resource('links', \App\Http\Controllers\LinksController::class);
+    Route::resource('links', \App\Http\Controllers\linksController::class);
+    Route::post('import', [\App\Http\Controllers\companyController::class, 'import'])->name('companies.import');
     Route::resource('companies', \App\Http\Controllers\companyController::class);
 });
 
@@ -61,7 +63,6 @@ Route::middleware(['guest'])->group(function () {
 //File megtekintes
 Route::get('/file/{filename}', function ($filename = '') {
     $path = storage_path('app/public/' . $filename);
-
     if (!File::exists($path)) {
         abort(404);
     }

@@ -19,7 +19,9 @@
                     <div class="heading-block border-bottom-0 center mx-auto" style="max-width: 550px">
                         <div class="badge badge-pill badge-default">Services</div>
                         <h3 class="nott ls0 mb-3">Mivel foglalkozunk</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed velit quo, quis. Culpa reprehenderit quo nostrum facere quis maiores.</p>
+                        <p>Egyéni vállalkozók, betéti tárasságok és korlátolt felelősségű társaságok  könyvelésével, bérszámfejtésével foglalkozunk.
+                            A mindennapi munka során keletkezett számlák, bizonylatok könyvelésén túl  üzletviteli tanácsadásig és a felsoroltakkal együtt járó teljes körű ügyintézésig mindenben állunk ügyfeleink rendelkezésére.
+                        </p>
                     </div>
 
                     <div class="text-md-center">
@@ -84,6 +86,12 @@
 
                     </div>
 
+                    <div class="mt-4">
+                        <h2>Irodánk - <a href="https://goo.gl/maps/KETMYZY3GCQMiqSa6" target="_blank">6000 Kecskemét, Erkel utca 1.</a></h2>
+                        <img src="images/iroda1.jpg" alt="iroda1 kep" class="rounded-lg shadow-lg mb-4">
+                        <img src="images/iroda2.jpg" alt="iroda1 kep" class="rounded-lg shadow-lg mb-4">
+                        <img src="images/iroda3.jpg" alt="iroda1 kep" class="rounded-xl shadow-lg mb-6">
+                    </div>
                 </div>
             </div>
         </div>

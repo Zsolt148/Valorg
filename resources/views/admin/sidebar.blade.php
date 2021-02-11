@@ -1,5 +1,5 @@
 <ul id="myTab2" class="nav nav-pills boot-tabs my-4">
-    <li class="nav-item"><a class="nav-link disabled" href="#">Admin</a></li>
+    <li class="nav-item"><a class="nav-link disabled" href="#">Admin menü:</a></li>
 
     <li class="nav-item dropdown ml-2">
         <a class="nav-link dropdown-toggle @if(Route::is('admin.news.*')) active @endif" href="#" id="race" data-toggle="dropdown">Hírek</a>
@@ -17,9 +17,9 @@
         </ul>
     </li>
 
+    <li class="nav-item ml-2"><a class="nav-link @if(Route::is('admin.forms.index')) active @endif" href="{{ route('admin.forms.index') }}">Nyomtatványok</a></li>
+
     <li class="nav-item ml-2"><a class="nav-link @if(Route::is('admin.companies.index')) active @endif" href="{{ route('admin.companies.index') }}">Cégek</a></li>
 
     <li class="nav-item ml-2"><a class="nav-link @if(Route::is('admin.links.index')) active @endif" href="{{ route('admin.links.index') }}">Linkek</a></li>
-
-    <li class="nav-item ml-2"><a class="nav-link @if(Route::is('admin.contacts.index')) active @endif" href="{{ route('admin.contacts.index') }}">Üzenetek</a></li>
 </ul>
