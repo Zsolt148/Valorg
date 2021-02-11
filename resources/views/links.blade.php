@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Rólunk')
+@section('title', 'Hasznos Linkek')
 @section('content')
 
     <section id="page-title" class="page-title-parallax page-title-center page-title include-header" style="background-image: linear-gradient(to top, rgba(254,150,3,0.5), #f0f0f7), url('images/wallpaper-min.jpg'); background-size: cover; padding: 120px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -700px;">
@@ -12,18 +12,14 @@
 
     </section><!-- #page-title end -->
     <section id="content">
-        <div class="content-wrap py-0 overflow-visible">
-            <div class="card mx-auto mw-md border-0 shadow rounded-xl card-seo-about">
-                <div class="card-body p-5">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            @foreach(\App\Models\Links::all() as $link)
-                                <div class="nott ls0 mb-3">
-                                    <a href="{{ $link->url }}" target="_blank" class="h1"><u>{{ $link->name }}</u></a>
-                                </div>
-                            @endforeach
+        <div class="content-wrap">
+            <div class="section bg-transparent m-0 pt-0 pb-0">
+                <div class="container mw-md">
+                    @foreach(\App\Models\Links::all() as $link)
+                        <div class="mb-3">
+                            <a href="{{ $link->url }}" target="_blank" class="h1"><u>{{ $link->name }}</u></a>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

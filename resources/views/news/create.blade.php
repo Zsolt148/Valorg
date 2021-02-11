@@ -27,6 +27,11 @@
                     @error('body') <span class="text-sm text-danger">{{ $message }}</span> @enderror
                 </div>
 
+                <!--<div class="form-check ml-3 mb-4">
+                    <input type="checkbox" name="email" id="email" class="form-check-input">
+                    <label for="email" class="form-check-label">Email küldése az összes ügyfélnek a hírről</label>
+                </div>-->
+
                 <div class="form-group col-12">
                     <button class="button button-reveal button-medium button-rounded tright"><i class="icon-angle-right"></i><span>Létrehozás</span></button>
                 </div>

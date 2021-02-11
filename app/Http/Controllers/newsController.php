@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\newsMail;
+use App\Models\Company;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class newsController extends Controller
@@ -21,7 +24,7 @@ class newsController extends Controller
      */
     public function index_guest()
     {
-        $news = News::orderBy('created_at', 'desc')->paginate(5);
+        $news = News::orderBy('created_at', 'desc')->paginate(10);
         return view('news.index_guest', compact('news'));
     }
 
@@ -57,12 +60,20 @@ class newsController extends Controller
             'body' => 'required',
         ]);
 
-        News::create([
-            'user_id' => Auth::user()->id,
+         News::create([
+            'user_id' => request()->user()->id,
             'title' => $data['title'],
             'slug' => $data['slug'],
             'body' => $data['body'],
         ]);
+
+        /*
+        if($request->get('email') == 'on') {
+            foreach(Company::all() as $comp) {
+                Mail::to($comp->email)->queue(new newsMail($news, url("news/" . $news->slug)));
+            }
+        }
+        */
 
         return redirect()->route('admin.news.index')->with('success', 'Sikeresen mentve');
     }

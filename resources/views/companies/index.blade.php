@@ -14,13 +14,39 @@
                 </div>
             @endif
 
+            <div class="col">
+                <h3 class="mb-4">Cég hozzáadása</h3>
+                <form action="{{ route('admin.companies.store') }}" class="row" method="post">
+                    @csrf
+                    <div class="form-group col-4">
+                        <label for="name">Cégnév</label>
+                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                        @error('name') <span class="text-sm text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
+                        @error('email') <span class="text-sm text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="tax_id">Adóazonosító első 8 számjegye</label>
+                        <input type="text" class="form-control" name="tax_id" id="tax_id" value="{{ old('tax_id') }}">
+                        @error('tax_id') <span class="text-sm text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="form-group col-2">
+                        <button class="button button-reveal button-small button-rounded text-right mt-4"><i class="icon-angle-right"></i><span>Hozzáadás</span></button>
+                    </div>
+                </form>
+            </div>
+
             <div class="col mb-5">
                 <h3 class="mb-4">Cégek importálása Excelből</h3>
-                <form action="{{ route('admin.companies.store') }}" class="row" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.companies.import') }}" class="row" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="col-4">
                         <label for="file">Fájl</label><span class="text-sm"> - .csv, .xls vagy .xlsx</span>
-                        <input id="" type="file" class="form-text" name="file" data-show-preview="false" required/>
+                        <input id="file" type="file" class="form-text" name="file" data-show-preview="false" required/>
+                        @error('file') <span class="text-sm text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="col-3">
                         <button class="button button-reveal button-small button-rounded text-right mt-4"><i class="icon-angle-right"></i><span>Feltöltés</span></button>
@@ -34,6 +60,7 @@
                     <tr>
                         <th>#id</th>
                         <th>Cég</th>
+                        <th>Email</th>
                         <th>Adóazonosító</th>
                         <th>Létrehozva</th>
                         <th>Admin</th>
@@ -44,6 +71,7 @@
                         <tr>
                             <td>{{ $n->id }}</td>
                             <td>{{ $n->name }}</td>
+                            <td>{{ $n->email }}</td>
                             <td>{{ $n->tax_id }}</td>
                             <td>{{ $n->created_at->format('Y.m.d H:i:s') }}</td>
                             <td>

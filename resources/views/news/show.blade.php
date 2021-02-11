@@ -8,7 +8,7 @@
             @if(Cookie::get('confirmed') == 'confirmed' || Auth::user())
                 <div class="fancy-title title-bottom-border mb-0">
                     <h1>
-                        <span>{{ $news->created_at->format('Y.m.d') }}</span> - {{ $news->title }}
+                        <span>{{ $news->title }}</span> - {{ $news->created_at->format('Y.m.d') }}
                         @if(Auth::user()) <span class="float-right"><a href="{{ route('admin.news.edit', $news->id) }}">Szerk.</a></span>@endif
                     </h1>
                 </div>

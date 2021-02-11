@@ -21,7 +21,33 @@ class companyController extends Controller
 
     public function store(Request $r) {
 
-        Excel::import(new CompaniesImport(), $r->file);
+        $r->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'tax_id' => 'required'
+        ]);
+
+        Company::updateOrCreate(
+          [
+              'tax_id' => $r->get('tax_id')
+          ], [
+              'name' => $r->get('name'),
+              'email' => $r->get('email'),
+            ]
+        );
+
+        return redirect()->route('admin.companies.index')->with('success', 'Sikeresen hozzáadva');
+    }
+
+    public function import(Request $r) {
+
+        $r->validate([
+           'file' => 'required|mimes:xls,xlsx,csv,txt'
+        ]);
+
+        Company::query()->delete();
+
+        Excel::import(new CompaniesImport(), $r->file('file'));
 
         return redirect()->route('admin.companies.index')->with('success', 'Sikeresen importálva');
     }

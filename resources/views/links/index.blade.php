@@ -40,7 +40,6 @@
                         <th>#id</th>
                         <th>Név</th>
                         <th>URL cím</th>
-                        <th>Létrehozva</th>
                         <th>Admin</th>
                     </tr>
                     </thead>
@@ -50,7 +49,6 @@
                             <td>{{ $n->id }}</td>
                             <td>{{ $n->name }}</td>
                             <td>{{ $n->url }}</td>
-                            <td>{{ $n->created_at->format('Y.m.d H:i:s') }}</td>
                             <td>
                                 <!--<a href="{{ route('admin.links.edit',$n->id) }}" class="ml-2 text-dark"><i class="icon-cog"></i></a>-->
                                 <a href="" data-toggle="modal" data-target=".deteleModal" class="ml-2 text-dark delete-button" data-delete-link="{{ route('admin.links.destroy',$n->id) }}"><i class="icon-trash"></i></a>
