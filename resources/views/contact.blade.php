@@ -26,9 +26,9 @@
                             <div class="text-larger">
                                 Munkatársaink: <br>
 
-                                Pál Andrea  +36703895527<br>
-                                Válik Dominika +36707763552<br>
-                                Kondász Sára +3676484610 <br><br>
+                                Pál Andrea  +36 70 3895527<br>
+                                Válik Dominika +36 70 7763552<br>
+                                Kondász Sára +36 76 484610 <br><br>
                                 E-mail: <a href="mailto:valorg2019@gmail.com">valorg2019@gmail.com</a>
                             </div>
                         </div>

@@ -58,7 +58,8 @@
                         </div>
                         <div class="form-group">
                             <a href="{{ url('/login/google')}}"
-                               class="button button-border button-medium button-rounded"><i><img style="width: 20px;" src="../images/g_logo.png" alt=""></i> Bejelentkezés Google fiókkal
+                               data-class-xl="button-medium" data-class-lg="button-medium" data-class-md="button-medium" data-class-sm="button-small" data-class-xs="button-small"
+                               class="button button-border button-rounded"><i><img style="width: 20px;" src="../images/g_logo.png" alt=""></i> Bejelentkezés Google fiókkal
                             </a>
                         </div>
                     </form>

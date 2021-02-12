@@ -164,6 +164,14 @@
         <script src="{{ asset('js/plugins.min.js') }}"></script>
         <script src="{{ asset('js/functions.js') }}"></script>
 
+        <script>
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        </script>
+
         @yield('js')
 
         <!-- Copyrights

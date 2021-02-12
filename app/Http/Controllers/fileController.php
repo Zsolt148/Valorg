@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class fileController extends Controller
 {
@@ -30,7 +31,8 @@ class fileController extends Controller
 
         if($request->file('files')) {
             foreach($request->file('files') as $key => $file) {
-                Storage::disk('public')->put($file->getClientOriginalName(), file_get_contents($file));
+                $name = str_replace(" ", "_", $file->getClientOriginalName());
+                Storage::disk('public')->put($name, file_get_contents($file));
             }
         }
 

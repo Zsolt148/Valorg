@@ -88,9 +88,9 @@
 
                     <div class="mt-4">
                         <h2>Irodánk - <a href="https://goo.gl/maps/KETMYZY3GCQMiqSa6" target="_blank">6000 Kecskemét, Erkel utca 1.</a></h2>
-                        <img src="images/iroda1.jpg" alt="iroda1 kep" class="rounded-lg shadow-lg mb-4">
-                        <img src="images/iroda2.jpg" alt="iroda1 kep" class="rounded-lg shadow-lg mb-4">
-                        <img src="images/iroda3.jpg" alt="iroda1 kep" class="rounded-xl shadow-lg mb-6">
+                        <img src="{{ url('images/Iroda1.jpg') }}" alt="iroda kivulrol kep" class="rounded-lg shadow-lg mb-4">
+                        <img src="{{ url('images/Iroda2.jpg') }}" alt="iroda kivulrol kep" class="rounded-lg shadow-lg mb-4">
+                        <img src="{{ url('images/Iroda3.jpg') }}" alt="iroda kivulrol kep" class="rounded-xl shadow-lg mb-6">
                     </div>
                 </div>
             </div>

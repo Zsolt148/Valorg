@@ -153,7 +153,6 @@
                                 </div>
                                 <div class="fbox-content">
                                     <h3 class="nott ls0">1. Kapcsolatfelvétel</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolore, voluptates!</p>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +164,6 @@
                                 </div>
                                 <div class="fbox-content">
                                     <h3 class="nott ls0">2. Elbeszélgetés</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, provident.</p>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +175,6 @@
                                 </div>
                                 <div class="fbox-content">
                                     <h3 class="nott ls0">3. Könyvelés</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
                                 </div>
                             </div>
                         </div>

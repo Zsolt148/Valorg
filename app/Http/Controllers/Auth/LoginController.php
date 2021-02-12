@@ -52,7 +52,7 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->user();
 
-        $emails = ['b.zsolt148@gmail.com', 'valorg2019@gmail.com']; //TODO Google emails
+        $emails = ['b.zsolt148@gmail.com', 'valorg2019@gmail.com'];
 
         if(in_array($user->email, $emails)) {
             $user = User::firstOrCreate([

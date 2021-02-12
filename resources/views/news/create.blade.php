@@ -60,7 +60,7 @@ $(document).ready(function() {
     });
 
     var files = <?php echo json_encode($files); ?>;
-    var url = "http://valorg.test/file/";
+    var url = "http://valorg.hu/file/";
     var links = [];
 
     files.forEach(function (v) {

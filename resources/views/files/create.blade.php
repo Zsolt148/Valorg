@@ -7,6 +7,7 @@
             @include('admin.sidebar')
             <div class="col">
                 <h3 class="mb-4">Fáljok feltöltése</h3>
+                <div class="mb-4">A fájl névben lehetőleg NE legyen ékezet, vessző és space.</div>
                 <form action="{{ route('admin.files.store') }}" method="post" class="row" enctype="multipart/form-data">
                     @csrf
 

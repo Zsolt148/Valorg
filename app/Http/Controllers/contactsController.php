@@ -18,9 +18,7 @@ class contactsController extends Controller
             'body' => 'required',
         ]);
 
-        dispatch(function () use ($data) {
-            Mail::to('valorg2019@gmail.com')->queue(new contactsMail($data));
-        });
+        Mail::to('valorg2019@gmail.com')->send(new contactsMail($data));
 
         return response()->json(["error" => false, "msg" => "Elküldve"]);
     }
