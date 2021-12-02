@@ -2,12 +2,12 @@
 @section('title', 'Nyomtatványok')
 @section('content')
 
-    <section id="page-title" class="page-title-parallax page-title-center page-title include-header" style="background-image: linear-gradient(to top, rgba(254,150,3,0.5), #f0f0f7), url('images/wallpaper-min.jpg'); background-size: cover; padding: 120px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -700px;">
+    <section id="page-title" class="page-title-parallax page-title-center page-title include-header" style="background-image: url('images/wallpaper_forms.png'); background-size: cover; padding: 100px 0;" data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -450px;">
         <div id="particles-line"></div>
 
         <div class="container clearfix mt-4 text-black">
-            <div class="badge badge-pill border border-dark">Nyomtatványok</div>
-            <p data-class-xl="h1" data-class-lg="h1" data-class-md="h1" data-class-sm="h2" data-class-xs="h2" class="font-weight-bold">Nyomtatványok Ügyfeleinknek</p>
+            <div class="badge badge-pill border border-light text-light">Nyomtatványok</div>
+            <p data-class-xl="h1" data-class-lg="h1" data-class-md="h1" data-class-sm="h2" data-class-xs="h2" class="font-weight-bold text-light">Nyomtatványok Ügyfeleinknek</p>
         </div>
 
     </section><!-- #page-title end -->
@@ -53,8 +53,12 @@
                 @if(Cookie::get('confirmed') == 'confirmed' || Auth::user())
                     @foreach($forms as $n)
                         <div class="title-block">
-                            <h1><a href="/file/{{ $n->file }}" target="_blank" class="">{{ $n->name }}</a></h1>
-                            <span>{{ $n->created_at->format('Y.m.d - H:i:s') }} <span class="pl-5">{{ $n->created_at->diffForHumans() }}</span></span>
+                            <h1>
+                                <a href="/file/{{ $n->file }}" target="_blank" class="">
+                                    {{ $n->name }}
+                                </a>
+                            </h1>
+                            <span><span class="badge badge-secondary">{{ substr($n->file, -3) }}</span> <span class="ml-5">{{ $n->created_at->format('Y.m.d - H:i:s') }}</span> <span class="ml-5">{{ $n->created_at->diffForHumans() }}</span></span>
                         </div>
                     @endforeach
                     {{ $forms->links() }}

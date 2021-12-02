@@ -22,9 +22,9 @@
                 </div>
 
                 <div class="form-group col-12">
-                    <label for="body">Szöveg</label>
-                    <textarea type="text" name="body" id="body">{{ old('body') }}</textarea>
+                    <div class="text-muted">Szöveg bemásolása formázás nélkül: CTRL + SHIFT + V</div>
                     @error('body') <span class="text-sm text-danger">{{ $message }}</span> @enderror
+                    <textarea type="text" name="body" id="body">{{ old('body') }}</textarea>
                 </div>
 
                 <!--<div class="form-check ml-3 mb-4">

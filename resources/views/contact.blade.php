@@ -2,11 +2,11 @@
 @section('title', 'Kapcsolat')
 @section('content')
 
-    <section id="page-title" class="page-title-parallax page-title-center page-title include-header" style="background-image: linear-gradient(to top, rgba(254,150,3,0.5), #f0f0f7), url('images/wallpaper-min.jpg'); background-size: cover; padding: 120px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -700px;">
+    <section id="page-title" class="page-title-parallax page-title-center page-title include-header" style="background-image: url('images/wallpaper_contact.png'); background-size: cover; padding: 120px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -700px;">
         <div id="particles-line"></div>
 
-        <div class="container clearfix mt-4 text-black">
-            <div class="badge badge-pill border border-dark">Kapcsolat</div>
+        <div class="container clearfix mt-4 text-light">
+            <div class="badge badge-pill border border-light">Kapcsolat</div>
             <p data-class-xl="h1" data-class-lg="h1" data-class-md="h1" data-class-sm="h2" data-class-xs="h2" class="font-weight-bold">Lépj velünk kapcsolatba</p>
         </div>
 
@@ -21,16 +21,16 @@
                                 <h3 class="nott ls0 mb-3">Hívj minket a +36-76/484-610-es telefonszámon</h3>
                             </div>
                             <div class="text-larger mb-3">
-                                <a href="https://goo.gl/maps/KETMYZY3GCQMiqSa6" target="_blank">6000 Kecskemét, Erkel utca 1.</a>
+                                <a href="https://goo.gl/maps/zyJVr3zKg3hW7gC89" target="_blank"><u>6000 Kecskemét, Katona József utca 17. (Zrínyi utca felöli bejárat)</u></a>
                             </div>
-                            <div class="text-larger">
+                            <p class="text-larger">
                                 Munkatársaink: <br>
-
-                                Pál Andrea  +36 70 3895527<br>
-                                Válik Dominika +36 70 7763552<br>
-                                Kondász Sára +36 76 484610 <br><br>
-                                E-mail: <a href="mailto:valorg2019@gmail.com">valorg2019@gmail.com</a>
-                            </div>
+                                Pál Andrea  +36 70 3895227<br>
+                                Válik Dominika +36 70 7763552
+                            </p>
+                            <p class="text-larger">
+                                E-mail cím: <a href="mailto:valorg2019@gmail.com">valorg2019@gmail.com</a>
+                            </p>
                         </div>
                     </div>
                 </div>
